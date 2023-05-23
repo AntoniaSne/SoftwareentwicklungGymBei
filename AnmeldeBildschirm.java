@@ -1,5 +1,8 @@
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JFrame;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * Beschreiben Sie hier die Klasse AnmeldeBildschirm.
@@ -7,7 +10,7 @@ import javax.swing.JLabel;
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class AnmeldeBildschirm
+public class AnmeldeBildschirm extends JFrame implements ActionListener
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private int x;
@@ -32,12 +35,34 @@ public class AnmeldeBildschirm
         registrierung.setFont(registrierung.getFont().deriveFont(46f));
         registrierung.setLocation(400,300);
         
+        super.add(registrierung);
+        super.add(anmeldung);
+        
+        
+        
+        Startfenster();
+        
+        super.setLayout(null);
+        super.setSize(1290, 750);
+        super.setVisible(true);
         
     }
     
     public void Startfenster(){
         anmeldung.setVisible(true);
         registrierung.setVisible(true);
+
     }
     
+    public void actionPerformed(ActionEvent e){
+        // if(e.getSource() == button){
+            // String name = eingabe.getText();
+            // label.setText("Die Schlange heißt " + name + "!");
+        // }
+        // else{ if(e.getSource() == Starten){
+                // label.setText("Starten");
+                // FensterAufbauenV2();
+                // }
+        // }
+    }
 }
