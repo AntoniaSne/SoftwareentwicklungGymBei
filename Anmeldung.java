@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 public class Anmeldung extends JFrame implements ActionListener
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    
     private JTextField username;
     private JTextField mail;
     /**
