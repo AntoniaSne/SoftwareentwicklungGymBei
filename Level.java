@@ -13,22 +13,31 @@ import javax.swing.JFrame;
 public class Level  extends JFrame{
     private JLabel label;
     private JLabel label2;
+    private JLabel label3;
     
     public Level()
     {
         ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");
-        ImageIcon untergrund = new ImageIcon ("Untergrund.png");
+        
+        
         
         label = new JLabel(hintergrund);
         label.setLocation(-130,-70);
         label.setSize(1400, 787);
         
+        ImageIcon untergrund = new ImageIcon ("Untergrund.png");
         label2 = new JLabel(untergrund);
-        label2.setLocation(0,0);
+        label2.setLocation(20,550);
         label2.setSize(200, 300);
         
-        super.add(label);
+        ImageIcon astronaut = new ImageIcon ("Astronaut.png");
+        label3 = new JLabel(astronaut);
+        label3.setLocation(50,200);
+        label3.setSize(500, 200);
+        
+        super.add(label3);
         super.add(label2);
+        super.add(label);
         
         FensterAufbauenV1();
         
@@ -39,7 +48,7 @@ public class Level  extends JFrame{
      public void FensterAufbauenV1() {
 
         label.setVisible(true);
-        
-
+        label2.setVisible(true);
+        label3.setVisible(true);
     }
 }
