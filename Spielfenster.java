@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 
 /**
@@ -15,7 +16,8 @@ public class Spielfenster extends JFrame implements ActionListener
 {
     private JButton anmeldung;
     private JButton registrierung;
-    
+    private JTextArea textmail;
+    private JTextArea textuser;
     private JTextField username;
     private JTextField mail;
     Spielfenster(){
@@ -34,25 +36,44 @@ public class Spielfenster extends JFrame implements ActionListener
         registrierung.setFont(registrierung.getFont().deriveFont(46f));
         registrierung.setLocation(400,300);
         
-         username = new JTextField();
+        //username ist das obere Fenster
+        username = new JTextField();
         username.setSize(400,80);
         username.setLocation(400,100);
         username.setFont(username.getFont().deriveFont(40f));
         username.setEnabled(true);
         
+        textuser = new JTextArea();
+        textuser.setText("Username");
+        textuser.setSize(300,70);
+        textuser.setLocation(50,100);
+        textuser.setFont(username.getFont().deriveFont(40f));
+        textuser.setEnabled(true);
+        textuser.setEditable(false);
+        
+        // mail ist das untere Textfeld
         mail = new JTextField();
         mail.setSize(400,80);
         mail.setLocation(400,400);
         mail.setFont(username.getFont().deriveFont(40f));
         mail.setEnabled(true);
         
-        
+        textmail = new JTextArea();
+        textmail.setText("Mail");
+        textmail.setSize(300,70);
+        textmail.setLocation(50,400);
+        textmail.setFont(username.getFont().deriveFont(40f));
+        textmail.setEnabled(true);
+        textmail.setEditable(false);
         
         //Hinzufügen der Buttons         
         super.add(registrierung);
         super.add(anmeldung);
         super.add(username);
         super.add(mail);
+        super.add(textmail);
+        super.add(textuser);
+        
         
         anmeldung.addActionListener(this); 
         registrierung.addActionListener(this);
@@ -80,6 +101,8 @@ public class Spielfenster extends JFrame implements ActionListener
         registrierung.setVisible(true);
         mail.setVisible(false);
         username.setVisible(false);
+        textmail.setVisible(false);
+        textuser.setVisible(false);
     }
     
     public void Anmeldefenster(){
@@ -87,18 +110,21 @@ public class Spielfenster extends JFrame implements ActionListener
         registrierung.setVisible(false);
         mail.setVisible(true);
         username.setVisible(true);
-        
+        textmail.setVisible(true);
+        textuser.setVisible(true);
     }
     public void Registrierungsfenster(){
         anmeldung.setVisible(false);
         registrierung.setVisible(false);
         mail.setVisible(false);
         username.setVisible(false);
+        textmail.setVisible(true);
+        textuser.setVisible(true);
     }
     
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == anmeldung){
-            System.out.println("bis hier und nicht weiter");
+            
             Anmeldefenster();
         }
         else{ if(e.getSource() == registrierung){
