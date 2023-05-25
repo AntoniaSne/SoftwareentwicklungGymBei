@@ -1,7 +1,10 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JFrame;
-
+import javax.swing.*;
+import java.io.*;
+import javax.imageio.*;
+import java.awt.*;
 
 /**
  * Beschreiben Sie hier die Klasse Level.
@@ -41,5 +44,27 @@ public class Level  extends JFrame{
         label.setVisible(true);
         
 
+    }
+    public static void main(String[] args) {
+       
+       
+        JFrame Hauptmenü = new JFrame("Drag and Play");
+       
+        try {
+           
+            Hauptmenü.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:/Java/Drag and Play/Sources/Hauptmenü.jpg")))));
+           
+        }catch(IOException e)
+        {
+            System.out.println("Image not found");
+        }
+       
+        Dimension screensize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+       
+       
+        System.out.println(screensize);
+        Hauptmenü.setResizable(false);
+        Hauptmenü.setSize(screensize);
+        Hauptmenü.setVisible(true);
     }
 }
