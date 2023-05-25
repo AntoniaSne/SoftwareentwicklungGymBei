@@ -20,10 +20,7 @@ public class Level  extends JFrame{
     
     public Level()
     {
-        ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");
-        
-        
-        
+        ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");    
         label = new JLabel(hintergrund);
         label.setLocation(-130,-70);
         label.setSize(1400, 787);
@@ -35,8 +32,8 @@ public class Level  extends JFrame{
         
         ImageIcon astronaut = new ImageIcon ("Astronaut.png");
         label3 = new JLabel(astronaut);
-        label3.setLocation(50,200);
-        label3.setSize(500, 200);
+        label3.setLocation(0,295);
+        label3.setSize(300, 300);
         
         super.add(label3);
         super.add(label2);
@@ -53,27 +50,7 @@ public class Level  extends JFrame{
         label.setVisible(true);
         label2.setVisible(true);
         label3.setVisible(true);
-    }
-    public static void main(String[] args) {
-       
-       
-        JFrame Hauptmenü = new JFrame("Drag and Play");
-       
-        try {
-           
-            Hauptmenü.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:/Java/Drag and Play/Sources/Hauptmenü.jpg")))));
-           
-        }catch(IOException e)
-        {
-            System.out.println("Image not found");
-        }
-       
-        Dimension screensize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-       
-       
-        System.out.println(screensize);
-        Hauptmenü.setResizable(false);
-        Hauptmenü.setSize(screensize);
-        Hauptmenü.setVisible(true);
+    
     }
 }
+   
