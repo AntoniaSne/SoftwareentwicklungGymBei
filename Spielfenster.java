@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 
 /**
@@ -20,6 +23,10 @@ public class Spielfenster extends JFrame implements ActionListener
     private JTextArea textuser;
     private JTextField username;
     private JTextField mail;
+    private JLabel label;
+    private JLabel label2;
+    private JLabel label3;
+    
     Spielfenster(){
         //Anmeldebutton
         anmeldung = new JButton();
@@ -57,6 +64,8 @@ public class Spielfenster extends JFrame implements ActionListener
         mail.setLocation(400,400);
         mail.setFont(username.getFont().deriveFont(40f));
         mail.setEnabled(true);
+        mail.setBackground(new Color(0,0,255)); //hier wird Farbe des Textfeldhintergrunds gesetzt mit r,g,b werten gesetzt.
+        mail.setForeground(Color.WHITE);
         
         textmail = new JTextArea();
         textmail.setText("Mail");
@@ -65,6 +74,31 @@ public class Spielfenster extends JFrame implements ActionListener
         textmail.setFont(username.getFont().deriveFont(40f));
         textmail.setEnabled(true);
         textmail.setEditable(false);
+        
+        
+        //images
+        ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");
+        label = new JLabel(hintergrund);
+        label.setLocation(-130,-70);
+        label.setSize(1400, 787);
+        
+        ImageIcon untergrund = new ImageIcon ("Untergrund.png");
+        label2 = new JLabel(untergrund);
+        label2.setLocation(20,550);
+        label2.setSize(200, 300);
+        
+        ImageIcon astronaut = new ImageIcon ("Astronaut.png");
+        label3 = new JLabel(astronaut);
+        label3.setLocation(50,200);
+        label3.setSize(500, 200);
+        //labels
+        super.add(label3);
+        super.add(label2);
+        super.add(label);
+        
+        
+        
+        
         
         //Hinzufügen der Buttons         
         super.add(registrierung);
@@ -103,6 +137,9 @@ public class Spielfenster extends JFrame implements ActionListener
         username.setVisible(false);
         textmail.setVisible(false);
         textuser.setVisible(false);
+        label.setVisible(true);
+        label2.setVisible(true);
+        label3.setVisible(true);
     }
     
     public void Anmeldefenster(){
