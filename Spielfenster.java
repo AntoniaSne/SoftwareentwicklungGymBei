@@ -28,7 +28,7 @@ public class Spielfenster extends JFrame implements ActionListener
     private JLabel label3;
     
     Spielfenster(){
-        //Anmeldebutton
+       //Anmeldebutton
         anmeldung = new JButton();
         anmeldung.setText("Anmeldung");
         anmeldung.setSize(400,80);
@@ -139,24 +139,14 @@ public class Spielfenster extends JFrame implements ActionListener
         
         
         //Generierung des Startfensters
-        Anmeldefenster();
-       // Startfenster();
+        //Anmeldefenster();
+        Startfenster();
         super.setLayout(null);
         super.setSize(1290, 750);
         super.setVisible(true);
         
         //Generieren des Anmeldefensters
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       
         
         
     }
@@ -166,11 +156,24 @@ public class Spielfenster extends JFrame implements ActionListener
         registrierung.setVisible(true);
         mail.setVisible(false);
         username.setVisible(false);
-        textmail.setVisible(false);
         textuser.setVisible(false);
+        textmail.setVisible(false);
         label.setVisible(true);
         label2.setVisible(true);
         label3.setVisible(true);
+        
+        
+        
+        
+        // anmeldung.setVisible(true);
+        // registrierung.setVisible(true);
+        // mail.setVisible(false);
+        // username.setVisible(false);
+        // textmail.setVisible(false);
+        // textuser.setVisible(false);
+        // label.setVisible(true);
+        // label2.setVisible(true);
+        // label3.setVisible(true);
     }
     
     public void Anmeldefenster(){
