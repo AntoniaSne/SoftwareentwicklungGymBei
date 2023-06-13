@@ -17,6 +17,7 @@ public class Level  extends JFrame{
     private JLabel label;
     private JLabel label2;
     private JLabel label3;
+    private Astronaut astronaut;
     
     public Level()
     {
@@ -30,12 +31,10 @@ public class Level  extends JFrame{
         label2.setLocation(20,550);
         label2.setSize(200, 300);
         
-        ImageIcon astronaut = new ImageIcon ("Astronaut.png");
-        label3 = new JLabel(astronaut);
-        label3.setLocation(0,295);
-        label3.setSize(300, 300);
+        astronaut= new Astronaut();
         
-        super.add(label3);
+        
+        super.add(astronaut.GibAstronaut());
         super.add(label2);
         super.add(label);
         
@@ -49,7 +48,7 @@ public class Level  extends JFrame{
 
         label.setVisible(true);
         label2.setVisible(true);
-        label3.setVisible(true);
+        
     
     }
 }
