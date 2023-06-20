@@ -21,8 +21,10 @@ public class Spielfenster extends JFrame implements ActionListener
     private JButton registrierung;
     private JTextArea textmail;
     private JTextArea textuser;
-    private JTextField username;
-    private JTextField mail;
+    private JTextField ausername;
+    private JTextField rusername;
+    private JTextField amail;
+    private JTextField rmail;
     private JLabel label;
     private JLabel label2;
     private JLabel label3;
@@ -49,20 +51,27 @@ public class Spielfenster extends JFrame implements ActionListener
         
         
         //username ist das obere Fenster der Anmeldung
-        username = new JTextField();
-        username.setSize(400,80);
-        username.setLocation(400,100);
-        username.setFont(username.getFont().deriveFont(40f));
-        username.setEnabled(true);
-        username.setBackground(new Color(0,0,255));
-        username.setForeground(Color.BLACK);
+        ausername = new JTextField();
+        ausername.setSize(400,80);
+        ausername.setLocation(400,100);
+        ausername.setFont(ausername.getFont().deriveFont(40f));
+        ausername.setEnabled(true);
+        ausername.setBackground(new Color(0,0,255));
+        ausername.setForeground(Color.BLACK);
         
+        rusername = new JTextField();
+        rusername.setSize(400,80);
+        rusername.setLocation(400,100);
+        rusername.setFont(rusername.getFont().deriveFont(40f));
+        rusername.setEnabled(true);
+        rusername.setBackground(new Color(0,0,255));
+        rusername.setForeground(Color.BLACK);
         
         textuser = new JTextArea();
         textuser.setText("Username");
         textuser.setSize(300,70);
         textuser.setLocation(50,100);
-        textuser.setFont(username.getFont().deriveFont(40f));
+        textuser.setFont(ausername.getFont().deriveFont(40f));
         textuser.setEnabled(true);
         textuser.setEditable(false);
         textuser.setForeground(Color.BLUE);
@@ -70,19 +79,28 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setBackground(new Color(0,255,0));
         
         // mail ist das untere Textfeld
-        mail = new JTextField();
-        mail.setSize(400,80);
-        mail.setLocation(400,400);
-        mail.setFont(username.getFont().deriveFont(40f));
-        mail.setEnabled(true);
-        mail.setBackground(new Color(0,0,255)); //hier wird Farbe des Textfeldhintergrunds gesetzt mit r,g,b werten gesetzt.
-        mail.setForeground(Color.WHITE);
+        amail = new JTextField();
+        amail.setSize(400,80);
+        amail.setLocation(400,400);
+        amail.setFont(ausername.getFont().deriveFont(40f));
+        amail.setEnabled(true);
+        amail.setBackground(new Color(0,0,255)); //hier wird Farbe des Textfeldhintergrunds gesetzt mit r,g,b werten gesetzt.
+        amail.setForeground(Color.WHITE);
+        
+        // mail ist das untere Textfeld
+        rmail = new JTextField();
+        rmail.setSize(400,80);
+        rmail.setLocation(400,400);
+        rmail.setFont(ausername.getFont().deriveFont(40f));
+        rmail.setEnabled(true);
+        rmail.setBackground(new Color(0,0,255)); //hier wird Farbe des Textfeldhintergrunds gesetzt mit r,g,b werten gesetzt.
+        rmail.setForeground(Color.WHITE);
         
         textmail = new JTextArea();
         textmail.setText("Mail");
         textmail.setSize(300,70);
         textmail.setLocation(50,400);
-        textmail.setFont(username.getFont().deriveFont(40f));
+        textmail.setFont(ausername.getFont().deriveFont(40f));
         textmail.setEnabled(true);
         textmail.setEditable(false);
         textmail.setBackground(new Color(0,255,0));
@@ -109,7 +127,7 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setText("Username");
         textuser.setSize(300,70);
         textuser.setLocation(50,100);
-        textuser.setFont(username.getFont().deriveFont(40f));
+        textuser.setFont(ausername.getFont().deriveFont(40f));
         textuser.setEnabled(true);
         textuser.setEditable(false);
         textuser.setForeground(Color.BLUE);
@@ -126,11 +144,12 @@ public class Spielfenster extends JFrame implements ActionListener
         //Hinzufügen der Buttons         
         super.add(registrierung);
         super.add(anmeldung);
-        super.add(username);
-        super.add(mail);
+        super.add(ausername);
+        super.add(amail);
         super.add(textmail);
         super.add(textuser);
-        
+        super.add(rmail);
+        super.add(rusername);
         //labels
         super.add(label3);
         super.add(label2);
@@ -154,15 +173,15 @@ public class Spielfenster extends JFrame implements ActionListener
     public void Startfenster(){
         anmeldung.setVisible(true);
         registrierung.setVisible(true);
-        mail.setVisible(false);
-        username.setVisible(false);
+        amail.setVisible(false);
+        ausername.setVisible(false);
         textuser.setVisible(false);
         textmail.setVisible(false);
         label.setVisible(true);
         label2.setVisible(true);
         label3.setVisible(true);
-        
-        
+        rmail.setVisible(false);
+        rusername.setVisible(false);
         
         
         // anmeldung.setVisible(true);
@@ -187,19 +206,27 @@ public class Spielfenster extends JFrame implements ActionListener
         label3.setVisible(false);
         anmeldung.setVisible(false);
         registrierung.setVisible(false);
-        mail.setVisible(true);
-        username.setVisible(true);
+        amail.setVisible(true);
+        ausername.setVisible(true);
         textmail.setVisible(true);
         textuser.setVisible(true);
+        rmail.setVisible(false);
+        rusername.setVisible(false);
         
     }
     public void Registrierungsfenster(){
+        label.setVisible(true);
+        label2.setVisible(false);
+        label3.setVisible(false);
         anmeldung.setVisible(false);
         registrierung.setVisible(false);
-        mail.setVisible(false);
-        username.setVisible(false);
+        amail.setVisible(false);
+        ausername.setVisible(false);
         textmail.setVisible(true);
         textuser.setVisible(true);
+        rmail.setVisible(true);
+        rusername.setVisible(true);
+        
     }
     
     public void actionPerformed(ActionEvent e){
