@@ -31,7 +31,7 @@ public class Level  extends JFrame{
         label2.setLocation(20,550);
         label2.setSize(200, 300);
         
-        astronaut= new Astronaut();
+        astronaut= new Astronaut(0,0);
         
         
         super.add(astronaut.GibAstronaut());
