@@ -22,36 +22,28 @@ public class Astronaut extends JLabel implements KeyListener
 
     public Astronaut(int x,int y)
     {
-        x = 0;
-        y = 295;
+        
         
         astronaut = new JLabel(new ImageIcon(getClass().getResource("Astronaut.png")));
         astronaut.setLocation(x,y);
         astronaut.setSize(300, 300);
         astronaut.addKeyListener(this);
-
+        astronaut.setFocusable(true);
     }
     @Override   public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             astronaut.setLocation(astronaut.getLocation().x, astronaut.getLocation().y - 5);
-            System.out.println("oben");
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            
+            astronaut.setLocation(astronaut.getLocation().x, astronaut.getLocation().y + 5);
         }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-           
+           astronaut.setLocation(astronaut.getLocation().x -5, astronaut.getLocation().y);
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-           
+           astronaut.setLocation(astronaut.getLocation().x + 5, astronaut.getLocation().y - 5);
         }
         
-         if (e.getKeyCode() == KeyEvent.VK_1) {
-           
-        }
-        if (e.getKeyCode() == KeyEvent.VK_2) {
-           
-        }
         repaint();
     }
      @Override

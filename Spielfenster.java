@@ -120,8 +120,8 @@ public class Spielfenster extends JFrame implements ActionListener
         
         ImageIcon astronaut = new ImageIcon ("Astronaut.png");
         label3 = new JLabel(astronaut);
-        label3.setLocation(50,200);
-        label3.setSize(500, 200);
+        label3.setLocation(0,295);
+        label3.setSize(300, 300);
         
         textuser = new JTextArea();
         textuser.setText("Username");
