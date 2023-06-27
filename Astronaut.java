@@ -1,5 +1,8 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.awt.Color;
+import javax.swing.*;
+import java.awt.event.*;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
@@ -11,59 +14,58 @@ import java.awt.event.KeyAdapter;
  * @version (eine Versionsnummer oder ein Datum)
  */
 
-public class Astronaut //implements KeyListener
+public class Astronaut extends JLabel implements KeyListener
 {
     public int x;
     int y;
-    public JLabel label3;
+    private JLabel astronaut;
 
     public Astronaut(int x,int y)
     {
         x = 0;
         y = 295;
-        ImageIcon astronaut = new ImageIcon ("Astronaut.png");
-        label3 = new JLabel(astronaut);
-        label3.setLocation(x,y);
-        label3.setSize(300, 300);
-        label3.addKeyListener(new KeyAdapter(){
-                @Override
-                public void keyPressed(KeyEvent label){
-                    
-                    if(label.getKeyCode()==KeyEvent.VK_RIGHT) {
-                        
-                        Erhoehex();
-                        
-                        System.out.println("vorwärts");
-                        AktualisierePosition();
-                    }
+        
+        astronaut = new JLabel(new ImageIcon(getClass().getResource("Astronaut.png")));
+        astronaut.setLocation(x,y);
+        astronaut.setSize(300, 300);
+        astronaut.addKeyListener(this);
 
-                }
-            });
+    }
+    @Override   public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            astronaut.setLocation(astronaut.getLocation().x, astronaut.getLocation().y - 5);
+            System.out.println("oben");
         }
-    public void AktualisierePosition(){
-        label3.setLocation(x,y);
-    }
-    public void Erhoehex(){
-            x= x+5;
-    }
-        public void keyPressed(KeyEvent e) {
-        System.out.println("Taste: " + e.getKeyChar() + ", Code: " + e.getKeyCode());
-        System.out.println("Tastenposition: " + e.getKeyLocation());
-        System.out.println("---");
-    }
-
-    void SonderTasteGedrückt(char taste){
-        switch(taste){
-            case 'd':
-                label3.move(30,0);
-                break;
-            case 40:
-
-                break;
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            
         }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+           
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+           
+        }
+        
+         if (e.getKeyCode() == KeyEvent.VK_1) {
+           
+        }
+        if (e.getKeyCode() == KeyEvent.VK_2) {
+           
+        }
+        repaint();
     }
+     @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+        
+    }
+    
 
     JLabel GibAstronaut(){
-        return label3;
+        return astronaut;
     }
 }
