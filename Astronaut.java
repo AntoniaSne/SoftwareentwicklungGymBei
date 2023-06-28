@@ -31,17 +31,11 @@ public class Astronaut extends JLabel implements KeyListener
         astronaut.setFocusable(true);
     }
     @Override   public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            astronaut.setLocation(astronaut.getLocation().x, astronaut.getLocation().y - 5);
-        }
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            astronaut.setLocation(astronaut.getLocation().x, astronaut.getLocation().y + 5);
-        }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-           astronaut.setLocation(astronaut.getLocation().x -5, astronaut.getLocation().y);
+           astronaut.setLocation(astronaut.getLocation().x -10, astronaut.getLocation().y);
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-           astronaut.setLocation(astronaut.getLocation().x + 5, astronaut.getLocation().y - 5);
+           astronaut.setLocation(astronaut.getLocation().x + 10, astronaut.getLocation().y);
         }
         
         repaint();

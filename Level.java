@@ -28,8 +28,8 @@ public class Level  extends JFrame{
         
         ImageIcon untergrund = new ImageIcon ("Untergrund.png");
         label2 = new JLabel(untergrund);
-        label2.setLocation(20,550);
-        label2.setSize(200, 300);
+        label2.setLocation(0,550);
+        label2.setSize(2000, 300);
         
         astronaut= new Astronaut(0,295);
         
