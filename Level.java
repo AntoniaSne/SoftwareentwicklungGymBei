@@ -18,6 +18,7 @@ public class Level  extends JFrame{
     private JLabel label2;
     private JLabel label3;
     private Astronaut astronaut;
+    private Asteroid asteroid;
     
     public Level()
     {
@@ -31,10 +32,12 @@ public class Level  extends JFrame{
         label2.setLocation(0,550);
         label2.setSize(2000, 300);
         
+        asteroid = new Asteroid(100, 100);
         astronaut= new Astronaut(0,295);
-        
+       
         
         super.add(astronaut.GibAstronaut());
+        super.add(asteroid.GibAsteroid());
         super.add(label2);
         super.add(label);
         
