@@ -31,8 +31,10 @@ public class Astronaut extends JLabel implements KeyListener
         astronaut.setFocusable(true);
     }
     @Override   public void keyPressed(KeyEvent e) {
+        System.out.println("links");
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
            astronaut.setLocation(astronaut.getLocation().x -10, astronaut.getLocation().y);
+           System.out.println("links");
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
            astronaut.setLocation(astronaut.getLocation().x + 10, astronaut.getLocation().y);
@@ -42,7 +44,7 @@ public class Astronaut extends JLabel implements KeyListener
     }
      @Override
     public void keyReleased(KeyEvent e) {
-
+        
     }
 
     @Override

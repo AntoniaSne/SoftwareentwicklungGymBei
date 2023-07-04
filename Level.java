@@ -13,7 +13,7 @@ import java.awt.*;
  * @23.05.2023
  */
 
-public class Level  extends JFrame{
+public class Level  extends JFrame implements Runnable{
     private JLabel label;
     private JLabel label2;
     private JLabel label3;
@@ -41,17 +41,17 @@ public class Level  extends JFrame{
         super.add(label2);
         super.add(label);
         
-        FensterAufbauenV1();
+        run();
         
         super.setLayout(null);
         super.setSize(1100, 680);
         super.setVisible(true);
     }
-     public void FensterAufbauenV1() {
+     public void run() {
 
-        label.setVisible(true);
-        label2.setVisible(true);
-        
+        label.setVisible(false);
+        label2.setVisible(false);
+        asteroid.setVisible(true);
     
     }
 }
