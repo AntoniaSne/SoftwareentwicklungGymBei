@@ -19,8 +19,10 @@ public class Spielfenster extends JFrame implements ActionListener
 {
     private JButton anmeldung;
     private JButton registrierung;
+    private JButton start;
     private JTextArea textmail;
     private JTextArea textuser;
+    private JTextArea punkte;
     private JTextField ausername;
     private JTextField rusername;
     private JTextField amail;
@@ -28,6 +30,7 @@ public class Spielfenster extends JFrame implements ActionListener
     private JLabel label;
     private JLabel label2;
     private JLabel label3;
+    
     
     Spielfenster(){
        //Anmeldebutton
@@ -45,7 +48,11 @@ public class Spielfenster extends JFrame implements ActionListener
         registrierung.setFont(registrierung.getFont().deriveFont(46f));
         registrierung.setLocation(400,300);
         
-        
+        start = new JButton();
+        start.setText("Start!");
+        start.setSize(400,60);
+        start.setFont(start.getFont().deriveFont(43f));
+        start.setLocation(400,600);
 
         
         
@@ -106,6 +113,16 @@ public class Spielfenster extends JFrame implements ActionListener
         textmail.setBackground(new Color(0,255,0));
         textmail.setForeground(Color.BLUE);
         
+        punkte = new JTextArea();
+        punkte.setText("Punkte:");
+        punkte.setSize(300,70);
+        punkte.setLocation(100,100);
+        punkte.setFont(ausername.getFont().deriveFont(40f));
+        punkte.setEnabled(true);
+        punkte.setEditable(false);
+        textmail.setBackground(new Color(0,255,0));
+        textmail.setForeground(Color.BLUE);
+        
         //images
         ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");
         label = new JLabel(hintergrund);
@@ -120,8 +137,8 @@ public class Spielfenster extends JFrame implements ActionListener
         
         ImageIcon astronaut = new ImageIcon ("Astronaut.png");
         label3 = new JLabel(astronaut);
-        label3.setLocation(50,200);
-        label3.setSize(500, 200);
+        label3.setLocation(0,295);
+        label3.setSize(300, 300);
         
         textuser = new JTextArea();
         textuser.setText("Username");
@@ -137,7 +154,7 @@ public class Spielfenster extends JFrame implements ActionListener
         
         anmeldung.addActionListener(this); 
         registrierung.addActionListener(this);
-                
+        start.addActionListener(this);        
         
         
         
@@ -150,7 +167,10 @@ public class Spielfenster extends JFrame implements ActionListener
         super.add(textuser);
         super.add(rmail);
         super.add(rusername);
+        super.add(start);
+        super.add(punkte);
         //labels
+
         super.add(label3);
         super.add(label2);
         super.add(label);
@@ -182,8 +202,8 @@ public class Spielfenster extends JFrame implements ActionListener
         label3.setVisible(true);
         rmail.setVisible(false);
         rusername.setVisible(false);
-        
-        
+        start.setVisible(false);
+        punkte.setVisible(false);
         // anmeldung.setVisible(true);
         // registrierung.setVisible(true);
         // mail.setVisible(false);
@@ -212,6 +232,8 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setVisible(true);
         rmail.setVisible(false);
         rusername.setVisible(false);
+        start.setVisible(true);
+        punkte.setVisible(false);
         
     }
     public void Registrierungsfenster(){
@@ -226,9 +248,24 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setVisible(true);
         rmail.setVisible(true);
         rusername.setVisible(true);
-        
+        start.setVisible(true);
+        punkte.setVisible(false);
     }
-    
+    public void Start(){
+        label.setVisible(true);
+        label2.setVisible(true);
+        label3.setVisible(true);
+        anmeldung.setVisible(false);
+        registrierung.setVisible(false);
+        amail.setVisible(false);
+        ausername.setVisible(false);
+        textmail.setVisible(false);
+        textuser.setVisible(false);
+        rmail.setVisible(false);
+        rusername.setVisible(false);
+        start.setVisible(false);
+        punkte.setVisible(false);
+    }
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == anmeldung){
             
@@ -237,6 +274,11 @@ public class Spielfenster extends JFrame implements ActionListener
         else{ if(e.getSource() == registrierung){
                 Registrierungsfenster();
                 }
+        else{if(e.getSource() == start){
+                Start();
+                }
+        
         }
+        }
+    }   
     }
-}
