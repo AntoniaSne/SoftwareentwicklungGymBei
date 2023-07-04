@@ -35,10 +35,14 @@ public class Asteroid extends JLabel implements KeyListener{
     } 
     void Fallen(){
         while(y >= 295){
-             asteroid.setLocation(asteroid.getLocation().x -5, asteroid.getLocation().y-7);
+             
+                
+                }
+            
+            asteroid.setLocation(asteroid.getLocation().x -5, asteroid.getLocation().y-7);
              repaint();
-        }
-    }
+            }
+    
 
     @Override
     public void keyReleased(KeyEvent e) {
@@ -52,4 +56,5 @@ public class Asteroid extends JLabel implements KeyListener{
 
     JLabel GibAsteroid(){
         return asteroid;
-    }}
+    }
+}

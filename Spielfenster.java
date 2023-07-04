@@ -189,7 +189,33 @@ public class Spielfenster extends JFrame implements ActionListener
         
         
     }
+    public void VI(){
+        anmeldung.setVisible(false);
+        registrierung.setVisible(false);
+        amail.setVisible(false);
+        ausername.setVisible(false);
+        textuser.setVisible(false);
+        textmail.setVisible(false);
+        label.setVisible(false);
+        label2.setVisible(false);
+        label3.setVisible(false);
+        rmail.setVisible(false);
+        rusername.setVisible(false);
+        start.setVisible(false);
+        punkte.setVisible(false);
+        // anmeldung.setVisible(true);
+        // registrierung.setVisible(true);
+        // mail.setVisible(false);
+        // username.setVisible(false);
+        // textmail.setVisible(false);
+        // textuser.setVisible(false);
+        // label.setVisible(true);
+        // label2.setVisible(true);
+        // label3.setVisible(true);
     
+    
+    
+    }
     public void Startfenster(){
         anmeldung.setVisible(true);
         registrierung.setVisible(true);
@@ -234,7 +260,7 @@ public class Spielfenster extends JFrame implements ActionListener
         rusername.setVisible(false);
         start.setVisible(true);
         punkte.setVisible(false);
-        
+        new Daten();
     }
     public void Registrierungsfenster(){
         label.setVisible(true);
@@ -276,6 +302,13 @@ public class Spielfenster extends JFrame implements ActionListener
                 }
         else{if(e.getSource() == start){
                 Start();
+                new Level();
+                VI();
+                String a = amail.getText();
+        	String b = ausername.getText();
+        	String c = rmail.getText();
+        	Daten d = new Daten();
+        	d.DatensatzEinfuegen(a + " "+ b + " " + c);
                 }
         
         }
