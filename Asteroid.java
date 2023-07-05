@@ -23,43 +23,14 @@ public class Asteroid extends JLabel{
         asteroid = new JLabel(new ImageIcon(getClass().getResource("Asteroid.png")));
         asteroid.setLocation(x,y);
         asteroid.setSize(400, 400);
-        //asteroid.addKeyListener(this);
-        //asteroid.setFocusable(true);
-
-        //Fallen();
         
+        //asteroid.inside(_x_, _y_);
 
-        Fallen();
+        
     }
 
-    public void keyPressed(KeyEvent e) {
-        
-
-        
-    } 
-    void Fallen(){
-        while(y >= 295){
-             
-                
-                }
-            
-            asteroid.setLocation(asteroid.getLocation().x -5, asteroid.getLocation().y-7);
-             repaint();
-            }
     
-
-    //@Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-    //@Override
-    public void keyTyped(KeyEvent ke) {
-
-
-    }
-
-    JLabel GibAsteroid(){
+     JLabel GibAsteroid(){
         return asteroid;
     }
 }

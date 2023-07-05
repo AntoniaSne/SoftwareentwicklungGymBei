@@ -16,16 +16,16 @@ import java.awt.event.KeyAdapter;
 
 public class Astronaut extends JLabel 
 {
-    public int x;
-    int y;
+    int a;
+    int b;
     private JLabel astronaut;
 
-    public Astronaut(int x,int y)
+    public Astronaut(int a,int b)
     {
         
         
         astronaut = new JLabel(new ImageIcon(getClass().getResource("Astronaut.png")));
-        astronaut.setLocation(x,y);
+        astronaut.setLocation(a,b);
         astronaut.setSize(300, 300);
         
     }
