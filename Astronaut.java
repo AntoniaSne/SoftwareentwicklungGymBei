@@ -14,7 +14,7 @@ import java.awt.event.KeyAdapter;
  * @version (eine Versionsnummer oder ein Datum)
  */
 
-public class Astronaut extends JLabel implements KeyListener
+public class Astronaut extends JLabel 
 {
     public int x;
     int y;
@@ -27,28 +27,9 @@ public class Astronaut extends JLabel implements KeyListener
         astronaut = new JLabel(new ImageIcon(getClass().getResource("Astronaut.png")));
         astronaut.setLocation(x,y);
         astronaut.setSize(300, 300);
-        astronaut.addKeyListener(this);
-        astronaut.setFocusable(true);
-    }
-    @Override   public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-           astronaut.setLocation(astronaut.getLocation().x -10, astronaut.getLocation().y);
-        }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-           astronaut.setLocation(astronaut.getLocation().x + 10, astronaut.getLocation().y);
-        }
-        
-        repaint();
-    }
-     @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyTyped(KeyEvent ke) {
         
     }
+    
     
 
     JLabel GibAstronaut(){

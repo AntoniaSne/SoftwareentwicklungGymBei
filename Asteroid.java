@@ -12,8 +12,9 @@ import java.awt.event.KeyEvent;
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Asteroid extends JLabel implements KeyListener{
+public class Asteroid extends JLabel{
     int y;
+    int x;
     private JLabel asteroid;
 
     public Asteroid(int x,int y)
@@ -22,13 +23,16 @@ public class Asteroid extends JLabel implements KeyListener{
         asteroid = new JLabel(new ImageIcon(getClass().getResource("Asteroid.png")));
         asteroid.setLocation(x,y);
         asteroid.setSize(400, 400);
-        asteroid.addKeyListener(this);
-        asteroid.setFocusable(true);
+        //asteroid.addKeyListener(this);
+        //asteroid.setFocusable(true);
+
+        //Fallen();
         
+
         Fallen();
     }
 
-       @Override   public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
         
 
         
@@ -44,13 +48,14 @@ public class Asteroid extends JLabel implements KeyListener{
             }
     
 
-    @Override
+    //@Override
     public void keyReleased(KeyEvent e) {
 
     }
 
-    @Override
+    //@Override
     public void keyTyped(KeyEvent ke) {
+
 
     }
 
@@ -58,3 +63,5 @@ public class Asteroid extends JLabel implements KeyListener{
         return asteroid;
     }
 }
+
+    
