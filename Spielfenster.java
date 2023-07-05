@@ -130,16 +130,7 @@ public class Spielfenster extends JFrame implements ActionListener
         textmail.setBackground(new Color(0,255,0));
         textmail.setForeground(Color.BLUE);
         
-        textalter = new JTextArea();
-        textalter.setText("Alter");
-        textalter.setSize(300,70);
-        textalter.setLocation(50,100);
-        textalter.setFont(textalter.getFont().deriveFont(40f));
-        textalter.setEnabled(true);
-        textalter.setEditable(false);
-        textalter.setForeground(Color.BLUE);
-        textalter.setVisible(true);
-        textalter.setBackground(new Color(0,255,0));
+        
         
         punkte = new JTextArea();
         punkte.setText("Punkte:");
@@ -179,6 +170,17 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setVisible(true);
         textuser.setBackground(new Color(0,255,0));
         
+        
+        textalter = new JTextArea();
+        textalter.setText("Alter");
+        textalter.setSize(300,70);
+        textalter.setLocation(50,100);
+        textalter.setFont(textalter.getFont().deriveFont(40f));
+        textalter.setEnabled(true);
+        textalter.setEditable(false);
+        textalter.setForeground(Color.BLUE);
+        textalter.setVisible(true);
+        textalter.setBackground(new Color(0,255,0));
         
         anmeldung.addActionListener(this); 
         registrierung.addActionListener(this);
@@ -347,7 +349,7 @@ public class Spielfenster extends JFrame implements ActionListener
         else{ if(e.getSource() == registrierung){
                 Registrierungsfenster();
                 }
-        else{if(e.getSource() == rstart){
+        else{if(e.getSource() == astart){
                 Start();
                 new Level();
                 VI();
@@ -355,7 +357,7 @@ public class Spielfenster extends JFrame implements ActionListener
                     String b = ausername.getText();
                     String c = alter.getText();
                 Daten d = new Daten();
-            d.DatensatzEinfuegen(a + " "+ b + " " + c);
+            d.DatensatzEinfuegen(b + " "+ a + " " + c);
                 }
             else{if(e.getSource() == rstart){
                 Start();
@@ -365,7 +367,7 @@ public class Spielfenster extends JFrame implements ActionListener
                     String b = rusername.getText();
                     String c = alter.getText();
                 Daten d = new Daten();
-                d.DatensatzEinfuegen(a + " "+ b + " " + c);
+                d.DatensatzEinfuegen(c + " "+ b + " " + a);
                 }
             }
             }
