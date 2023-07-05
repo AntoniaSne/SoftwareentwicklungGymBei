@@ -35,6 +35,7 @@ public class Spielfenster extends JFrame implements ActionListener
     private JLabel label3;
     
     
+    
     Spielfenster(){
        //Anmeldebutton
         anmeldung = new JButton();
@@ -83,7 +84,7 @@ public class Spielfenster extends JFrame implements ActionListener
         
         alter = new JTextField();
         alter.setSize(400,80);
-        alter.setLocation(400,300);
+        alter.setLocation(400,250);
         alter.setFont(alter.getFont().deriveFont(40f));
         alter.setEnabled(true);
         alter.setBackground(new Color(0,0,255));
@@ -145,9 +146,10 @@ public class Spielfenster extends JFrame implements ActionListener
         //images
         ImageIcon hintergrund = new ImageIcon ("Weltraum_hintergrund.png");
         label = new JLabel(hintergrund);
-        label.setLocation(-130,-70);
-        label.setSize(1400, 787);
-        
+        //label.setLocation(-130,-70);
+        label.setLocation(-1060,-900);
+        //label.setSize(1400, 787);
+        label.setSize(3500,2500);
         
         ImageIcon untergrund = new ImageIcon ("Untergrund.png");
         label2 = new JLabel(untergrund);
@@ -171,23 +173,23 @@ public class Spielfenster extends JFrame implements ActionListener
         textuser.setBackground(new Color(0,255,0));
         
         
-        textalter = new JTextArea();
-        textalter.setText("Alter");
-        textalter.setSize(300,70);
-        textalter.setLocation(50,100);
-        textalter.setFont(textalter.getFont().deriveFont(40f));
-        textalter.setEnabled(true);
-        textalter.setEditable(false);
-        textalter.setForeground(Color.BLUE);
-        textalter.setVisible(true);
-        textalter.setBackground(new Color(0,255,0));
+        
         
         anmeldung.addActionListener(this); 
         registrierung.addActionListener(this);
         astart.addActionListener(this);   
         rstart.addActionListener(this);
         
-        
+        textalter = new JTextArea();
+        textalter.setText("Alter");
+        textalter.setSize(300,70);
+        textalter.setLocation(50,250);
+        textalter.setFont(textalter.getFont().deriveFont(40f));
+        textalter.setEnabled(true);
+        textalter.setEditable(false);
+        textalter.setForeground(Color.BLUE);
+        textalter.setVisible(true);
+        textalter.setBackground(new Color(0,255,0));
         
         //Hinzufügen der Buttons         
         super.add(registrierung);
